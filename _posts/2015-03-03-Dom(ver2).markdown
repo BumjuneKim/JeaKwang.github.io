@@ -1,9 +1,7 @@
-
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <title>Reveal.js 3 Slide Demo</title>
+  <title>DOM 추가 자료</title>
   <link rel="stylesheet" href="/css/reveal.css">
   <link rel="stylesheet" href="/css/theme/moon.css" id="theme">
   <link rel="stylesheet" href="/css/custome/test.css">
@@ -11,10 +9,8 @@
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
 </head>
-
 <body id="body">
   <div class="reveal" id="wrap">
-
     <div class="slides">
       <section id="firstSection">
         <h1>DOM 추가 자료</h1>
@@ -35,7 +31,6 @@
           </p>
         </section>
       </section>
-
       <section id="event_capturing_example">
         <section>
           <h2>이벤트 캡처링 예제</h2>
@@ -63,7 +58,6 @@
           </p>
         </section>
       </section>
-
       <section id="nodeElement">
         <section>
           <h2>Node vs Element</h2>
@@ -132,7 +126,6 @@
   </div>
   <script src="/lib/js/head.min.js"></script>
   <script src="/js/reveal.js"></script>
-
   <script>
   Reveal.initialize({
     controls: true,
