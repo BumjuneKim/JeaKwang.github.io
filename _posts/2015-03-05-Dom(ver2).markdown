@@ -4,7 +4,7 @@
   <title>DOM 추가 자료</title>
   <link rel="stylesheet" href="/css/reveal.css">
   <link rel="stylesheet" href="/css/theme/moon.css" id="theme">
-  <link rel="stylesheet" href="/css/custome/test.css">
+  <link rel="stylesheet" href="/css/custome/2015-03-05.css">
   <!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
@@ -18,7 +18,7 @@
       <section id="documentType">
         <section>
           <h2>DOM TREE</h2>
-          <img src="/images/0.png">
+          <img src="/images/2015-03-05/0.png">
         </section>
         <section>
           <h3>Document 타입 중 HTML Objects를 찾는 Property</h3>
@@ -54,14 +54,14 @@
         <section>
           <h2>폼에서의 활용</h2>
           <p>
-            <img src="/images/1.png">
+            <img src="/images/2015-03-05/1.png">
           </p>
         </section>
       </section>
       <section id="nodeElement">
         <section>
           <h2>Node vs Element</h2>
-          <img src="/images/2.png">
+          <img src="/images/2015-03-05/2.png">
         </section>
         <section style="text-align: left;">
           <p>
