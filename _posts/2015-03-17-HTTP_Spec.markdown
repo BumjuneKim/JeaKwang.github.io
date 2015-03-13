@@ -18,22 +18,23 @@
       </section>
 
       <section >
+      	<section>
           <h2>HTTP</h2>
           <h3 style="text-transform: capitalize;">Hyper Text Transfer Protocol</h3>
           <p>
           이름대로라면 하이퍼텍스트 전용 프로토콜 이지만,<br/> 실제로는 컴퓨터에서 다룰 수 있는 데이터라면<br/> 무엇이든 전송할 수 있는 프로토콜 입니다.
           </p>
-      </section > 
-
-      <section>
-          <h2>HTTP 구조 및 특징</h2>
-          <p>
-          	클라이언트/서버 아키텍처 스타일<br/>
-          	요청/응답형 (Request-Response) 프로토콜<br/>
-          	동기형 (Synchronous) 프로토콜<br/>
-          - 스테이트 리스
-          </p>
-      </section>
+        </section>
+	      <section>
+	          <h2>HTTP 구조 및 특징</h2>
+	          <p>
+	          	클라이언트/서버 아키텍처 스타일<br/>
+	          	요청/응답형 (Request-Response) 프로토콜<br/>
+	          	동기형 (Synchronous) 프로토콜<br/>
+	            스테이트 리스
+	          </p>
+	      </section>
+      </section >
 
       <section>
       	<section id="http_struct">
@@ -86,7 +87,7 @@ Connection: keep-alive
 									<ul>
 										<li>구조 : 프로토콜 버전 / 스테이터스 코드 / 텍스트 구문</li>
 										<li>스테이터스 코드 : 요청의 결과를 프로그램으로 처리 가능한 수치로 표현한 코드
-										<li>1xx : 정보성 / 2xx : 성공 / 3xx : 리다이렉트 / 4xx : 클라이언트 오류 / 5xx : 서버 오류</li>
+										<li>1xx : 처리중, 2xx : 성공, 3xx : 리다이렉트, 4xx : 클라이언트 오류, 5xx : 서버 오류</li>
 										</li>
 									</ul>
 								</li>
@@ -98,13 +99,13 @@ Connection: keep-alive
 				</section>
 				<section data-transition="fade">
 					<div class="header_detail">
-						<h2>Host & User-Agent / Server</h2>
+						<h2>Host, User-Agent, Server</h2>
 {% highlight ruby %}
 // 요청
 Host: jeakwang.github.io
 User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36
 
-//응답
+// 응답
 Server: WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
 {% endhighlight %}
 						<p>
@@ -135,17 +136,17 @@ Date: Wed, 11 Mar 2015 03:18:57 GMT
 					<div class="header_detail">
 						<h2>Connection</h2>
 						<p>
+							HTTP는 연결을 매번 끊고 새로 생성하는 구조입니다. <br>
+							그런이유로 요청에 대한 응답을 반활할때마다 커넥션이 끊겨서 <br>
+							재연결에 많은 비용을 소비되기에 동작이 느려지는 단점이 있었습니다.
+						</p>
+						<p>
 {% highlight ruby %}
 Connection: keep-alive
 
 // 지속 연결을 중단하고 싶은 경우
 Connection: close
 {% endhighlight %}
-						</p>
-						<p>
-							HTTP는 연결을 매번 끊고 새로 생성하는 구조입니다. <br>
-							그런이유로 요청에 대한 응답을 반활할때마다 커넥션이 끊겨서 <br>
-							재연결에 많은 비용을 소비되기에 동작이 느려지는 단점이 있었습니다.
 						</p>
 						<p>
 							HTTP 1.1에는 커넥션을 절단하지 않고 지속적인 연결을 하는 기능을 지원합니다.
@@ -168,7 +169,7 @@ Cache-Control: max-age=86400 // 현재로부터 24시간
 						</p>
 						<ul>
 							<li>Pragma : 리소스를 캐시할 수 없음을 나태날 때 사용합니다.</li>
-							<li>Expires : 응답에의 바디가 캐시로서의 유효기간을 나타냅니다.(절대시간)</li>
+							<li>Expires : 응답의 데이터가 캐시로서의 유효기간을 나타냅니다.(절대시간)</li>
 							<li>Cache-Control : 클라이언트와 서버의 캐시방법을 나타냅니다.(상대시간)</li>
 						</ul>
 					</div>
@@ -236,42 +237,36 @@ Content-Length: 1270
 						</ul>
 					</div>
 				</section>
-			</section>
-
-
-			<section id="session">
 
 				<section data-transition="fade">
-					<h2>Session & Cookie</h2>
-					<p style="color: white;">
-						HTTP는 '스테이트리스'한 특성을 가지고 있어서 클라이언트의 정보를 저장하지는 않지만, <br> 때로는 그 정보를 기억해야할 경우에 Session 과 Cookie를 사용할 수 있다.
-					</p>
-					<table>
-						<thead>
-							<tr>
-								<th>Session</th>
-								<th>Cookie</th>
-							</tr>
-						</thead>
-						<tbody>
-								<tr>
-									<td>서버가 클라이언트측에 부여한 ID를 세션</td>
-									<td>서버측에서 클라이언트 측에 상태 정보를 저장하고 추출할 수 있는 메커니즘</td>
-								</tr>
-								<tr>
-									<td>클라이언트와 서버간에 통신연결이 활성화되 되었다는 의미를 지님</td>
-									<td>클라이언트의 매 요청마다 웹 브라우저로부터 서버에게 전송되는 정보패킷</td>
-								</tr>
-								<tr>
-									<td>서버의 정보를 저장</td>
-									<td>클라이언트의 정보를 저장</td>
-								</tr>
-						</tbody>
-					</table>
-				</section>
-				<section data-transition="fade">
-					<h2>생성과정</h2>
-					<img src="/images/test/1.png">
+					<div class="header_detail">
+						<h2>Session & Cookie</h2>
+						<p>
+						HTTP는 '스테이트리스'한 특성을 가지고 있어서 클라이언트의 정보를 저장하지는 않지만, <br> 때로는 그 정보를 기억해야할 경우에 Session 과 Cookie를 사용할 수 있습니다.
+						</p>
+{% highlight ruby %}
+// 응답
+Set-Cookie : sessionid = ab32441213; expires=Thu, 06 Mar 2015 00:17:18 GMT;
+
+// 요청
+Cookie : sessionid = ab32441213
+{% endhighlight %}
+						<ul>
+							<li>
+								Session
+								<ul>
+									<li>서버가 클라이언트측에 부여한 ID</li>
+									<li>클라이언트와 서버간에 통신연결이 활성화되 되었다는 의미</li>
+								</ul>
+							</li>							
+							<li>Cookie
+								<ul>
+									<li>서버측에서 클라이언트 측에 상태 정보를 저장하고 추출할 수 있는 메커니즘</li>
+									<li>클라이언트의 매 요청마다 웹 브라우저로부터 서버에게 전송되는 정보패킷</li>
+								</ul>
+							</li>						
+						</ul>						
+					</div>
 				</section>
 			</section>
 
@@ -296,7 +291,7 @@ Content-Length: 1270
 					<div class="fragment fade-in">
 						<div class="box"></div>
 						<div class="boxDesc">
-							Session Layer에 있는 SSL/TLS 프로토콜을 활용하여 통신로를 암호화하고<br> 클라이언트와 서버 간에 주고받는 데이터를 보호하여,<br> 도청을 방지할 수 있습니다.
+							Session Layer에서 SSL/TLS 프로토콜을 활용하여 통신로를 암호화하고<br> 클라이언트와 서버 간에 주고받는 데이터를 보호하여,<br> 도청을 방지할 수 있습니다.
 						</div>
 					</div>
 				</section>
@@ -322,8 +317,7 @@ Content-Length: 1270
 					</p>
 					<img src="/images/test/3.png">
 					<p class="fragment fade-in">
-						1. 공개키가 유출되어도 비공개키가 없으면 복호화 불가능 <br>
-						2. 데이터를 제공한 사람의 신원 보장
+						공개키가 유출되어도 비공개키가 없으면 복호화 불가능 <br>						
 					</p>
 				</section>
 
@@ -339,13 +333,42 @@ Content-Length: 1270
 					<img src="/images/test/4.png">
 				</section>
 
-				<section>
-					<h2>SSL의 데이터 전달</h2>
+				<section data-transition="fade">
+					<h2>SSL 인증</h2>
+					<p style="text-align: left;">
+						- 접속한 사이트의 신원을 보장하는 장치가 필요하다 <br>
+						- CA(Certificate authority) : 사이트의 신원을 보장하는 제3의 인증 기관
+					</p>
+					<ol>
+						<li class="fragment fade-in">
+							클라이언트가 서버에 접속하면 서버는 클라이언트에게 인증서를 전달합니다.
+							(인증서는 CA의 비밀키로 암호화한 서버의 공개키와 사이트의 정보가 담겨있습니다.)
+						</li>
+						<li class="fragment fade-in">
+							브라우저는 CA의 공개키로 인증서를 복호화하는데 성공한다면 해당 서버가 인증기관에서 인증받았다는 것을 의미합니다.
+							(브라우저는 각 CA들의 공개키를 이미 알고 있습니다.)
+						</li>
+					</ol>
+				</section>
 
+				<section data-transition="fade">
+					<h2>SSL 통신</h2>
+					<p>컴퓨터와 컴퓨터가 네트워크를 이용해서 통신을 할 때는 <br> 내부적으로 3가지 단계가 있다.
+					</p>
+					<ol>
+						<li class="fragment fade-in">
+							handshake
+							<ul>
+								<li style="font-size: 0.7em;">Client → Server : 랜덤데이터 + 지원 암호화방식 + 세션 아이디</li>
+								<li style="font-size: 0.7em;">Server → Client : 랜덤데이터 + 지원 암호화방식 + 인증서</li>
+								<li style="font-size: 0.7em;">암호화방식 결정, 랜덤데이터를 이용해 대칭키 생성, 인증키로 인증</li>
+							</ul>
+						</li>
+						<li class="fragment fade-in">session : 서버와 클라이언트가 데이터를 주고 받는 단계</li>
+						<li class="fragment fade-in">session end : 데이터의 전송이 끝나면 SSL 통신이 끝났음을 서로에게 알려주고, 대칭키 폐기</li>
+					</ol>
 				</section>
 			</section>
-				
-
     </div>
   </div>
   <script src="/js/jquery-1.11.1.min.js"></script>
@@ -362,15 +385,6 @@ Content-Length: 1270
     fragments: true,
     top: 0
   });
-  </script>
-  <script>
-  Reveal.addEventListener( 'fragmentshown', function( event ) {
-  	// var target = event.fragment;
-  	// if($(target).hasClass("fade-out")){
-  	// 	$(target).hide();
-  	// }
-    // event.fragment = the fragment DOM element
-} );
   </script>
 </body>
 

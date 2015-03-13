@@ -20,7 +20,7 @@ body {
         margin-bottom: 10px;
       }
       ul{
-        
+
         text-align: left;
         li{
           text-align: left;
@@ -44,19 +44,7 @@ body {
     @include clearImg;
   }
 }
-#session {
-  img {
-    @include clearImg;
-    width: 500px;
-  }
-  p {
-    font-size: 0.6em;
-  }
-  table {
-    color: #eee8d5;
-    font-size: 0.6em;
-  }
-}
+
 #https {
   section {
       img {
