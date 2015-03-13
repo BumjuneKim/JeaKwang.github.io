@@ -20,37 +20,64 @@
       	<section>
       		<h2>목차</h2>
       		<h3>
-	      		<ol>
+	      		<ol style="width: 300px;">
 	      			<li>HTTP</li>
 	      			<li>HTTPS</li>
-	      			<li>HTTP 2.0</li>
+	      			<li>HTTP2.0</li>
 	      		</ol>
       		</h3>
       	</section>
       </section>
-      <section >
+
+      <section id="http">
+
       	<section style="text-align: left;">
       		<h1>1. HTTP</h1>
       	</section>
+
       	<section>
           <h2 style="text-transform: capitalize;">Hyper Text Transfer Protocol</h2>
           <p>
-          이름대로라면 하이퍼텍스트 전용 프로토콜 이지만,<br/> 실제로는 컴퓨터에서 다룰 수 있는 데이터라면<br/> 무엇이든 전송할 수 있는 프로토콜 입니다.
+          이름대로라면 하이퍼텍스트 전용 프로토콜 이지만,<br/> 실제로는 컴퓨터에서 다룰 수 있는 데이터라면<br/> 무엇이든 전송할 수 있는 프로토콜
+          </p>
+          <p>
+          TCP/IP 프로토콜 기반위에 WWW 상에서 정보를 주고받을 수 있는 프로토콜
           </p>
         </section>
-	      <section>
-	          <h2>HTTP 특징</h2>
-	          <p style="text-align: left;">
-							<ul>
-								<li>클라이언트/서버 아키텍처 스타일 채용</li>
-								<li>요청/응답형 (Request-Response) 프로토콜</li>
-								<li>동기형 (Synchronous) 프로토콜</li>
-								<li>스테이트 리스</li>
-							</ul>
-	          </p>
-	      </section>
-      </section >
 
+ 	      <section>
+	      	<img src="/images/test/OSI.png" style="width: 700px;">
+	      		<div class="fragment fade-in">
+							<div class="box1"></div>
+						</div>
+						<div class="fragment fade-in">
+							<div class="box2"></div>
+							<div class="boxDesc">
+								TCP 프로토콜 : 데이터를 자르거나 합칩니다.
+							</div>
+						</div>
+						<div class="fragment fade-in">
+							<div class="box3"></div>
+							<div class="boxDesc">
+								IP 프로토콜 : TCP에 의해 잘려진 데이터를 목적지 까지 전달합니다.
+							</div>
+						</div>
+	      </section>
+
+	      <section>
+          <h2>HTTP 특징</h2>
+          <p style="text-align: left;">
+						<ul>
+							<li>클라이언트/서버 아키텍처 스타일 채용</li>
+							<li>요청/응답형 (Request-Response) 프로토콜</li>
+							<li>동기형 (Synchronous) 프로토콜</li>
+							<li>스테이트 리스</li>
+						</ul>
+          </p>
+	      </section>
+
+      </section>
+				
       <section>
       	<section id="http_struct">
 	      	<h2>HTTP Message</h2>

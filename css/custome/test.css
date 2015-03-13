@@ -27,6 +27,28 @@ body section {
   box-shadow: none;
   background: rgba(255, 255, 255, 0); }
 
+#http section .box1 {
+  position: absolute;
+  width: 600px;
+  height: 50px;
+  border: 5px solid red;
+  top: 190px;
+  left: 180px; }
+#http section .box2 {
+  position: absolute;
+  width: 600px;
+  height: 50px;
+  border: 5px solid red;
+  top: 335px;
+  left: 180px; }
+#http section .box3 {
+  position: absolute;
+  width: 600px;
+  height: 50px;
+  border: 5px solid red;
+  top: 380px;
+  left: 180px; }
+
 #https section img {
   border: none;
   box-shadow: none;
