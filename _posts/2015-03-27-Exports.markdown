@@ -1,0 +1,52 @@
+---
+layout: post
+title:  "module.exports vs exports"
+date:   2015-03-27 11:50:07
+categories: jekyll update nodejs exports
+---
+
+- `module`는 `exports`라는 프로퍼티를 지닌 단순한 자바스크립트 오브젝트입니다.
+- `exports`는 `module.exports`를 할당받은 자바스크립트 변수 입니다.
+- 파일이 끝나는 시점에 `require()`의 리턴값은 `module.exports` 입니다.
+
+{% highlight ruby %}
+var module = { exports: {} };
+var exports = module.exports;
+ 
+// your code
+ 
+return module.exports;
+{% endhighlight %}
+
+- `exports.a = 9` 처럼 `exports`의 프로퍼티에 값을 할당하는 작업은 `module.exports.a = 9`와 같습니다.
+   `exports`와 `module.exports`는 같은 오브젝트이기 때문입니다. ( exports === module.exports )
+
+- 그러나 `exports`의 프로퍼티에 값을 할당하는것이 아니라 직접값을 넣는다면,
+  더이상 `exports`와 `module.exports`는 같지 않습니다. ( exports != module.exports )
+
+{% highlight ruby %}
+/* right
+   exports의 프로퍼티 접근은 유효합니다. */
+exports.test = function() { ... }
+ 
+/* exports에 직접할당할 경우 module.exports != exports 가 됩니다.
+   return 되는 값은 module.exports이기 때문에 올바로 작동되지 않습니다. */
+var test = function() { ... }
+/* wrong */
+exports = test;
+/* right */
+exports.test = test;
+ 
+/* right
+   require( )에서 사용되는 되는 값은 module.exports이기때문에
+   module.exports에 값을 직접할당해도 유효합니다. */
+var test = function() { ... }
+module.exports = test;
+{% endhighlight %}
+1. `exports`에 직접 값을 할당하는 작업을 하지말자! (접근시 프로퍼티로 접근)
+2. `require()`에서 쓰이는 값은 `module.exports`라는것을 기억하자!
+
+출처 : [Stackoverflow][stackoverflow], [Node.js Q&A][nodejsqa]
+
+[stackoverflow]:http://stackoverflow.com/questions/16383795/difference-between-module-exports-and-exports-in-the-commonjs-module-system
+[nodejsqa]:http://nodeqa.com/nodejs_ref/7

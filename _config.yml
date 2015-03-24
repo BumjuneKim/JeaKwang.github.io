@@ -11,3 +11,4 @@ github_username:  jeakwang
 markdown: kramdown
 highlighter: pygments
 encoding: utf-8
+paginate: 10
