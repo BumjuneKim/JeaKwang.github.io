@@ -4,7 +4,7 @@
   <title>HTTP SPEC</title>
   <link rel="stylesheet" href="/css/reveal.css">
   <link rel="stylesheet" href="/css/theme/moon.css" id="theme">
-  <link rel="stylesheet" href="/css/custome/test.css">
+  <link rel="stylesheet" href="/css/custome/2015-03-17.css">
   <!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
@@ -46,7 +46,7 @@
         </section>
 
  	      <section>
-	      	<img src="/images/test/OSI.png" style="width: 700px;">
+	      	<img src="/images/2015-03-17/OSI.png" style="width: 700px;">
 	      		<div class="fragment fade-in">
 							<div class="box1"></div>
 						</div>
@@ -81,7 +81,7 @@
       <section>
       	<section id="http_struct">
 	      	<h2>HTTP Message</h2>
-					<img src="/images/test/0.png" >
+					<img src="/images/2015-03-17/0.png" >
 				</section>
 				<section>
 					<h2>Request / Response Message</h2>
@@ -334,7 +334,7 @@ Cookie : sessionid = ab32441213
 
 				<section data-transition="fade">
 					<h2>SSL/TLS</h2>
-					<img src="/images/test/OSI.png" style="width: 700px;">
+					<img src="/images/2015-03-17/OSI.png" style="width: 700px;">
 					<div class="fragment fade-in">
 						<div class="box"></div>
 						<div class="boxDesc">
@@ -349,7 +349,7 @@ Cookie : sessionid = ab32441213
 					암호화하기위한 일종의 비밀번호를 키(Key)라고 합니다. <br>
 					대칭키는 암호화와 복호화가 동시에 가능한 키입니다.<br>
 					</p>
-					<img src="/images/test/2.png">
+					<img src="/images/2015-03-17/2.png">
 					<p class="fragment fade-in">
 					암호화와 복호화를 하기 위해 상대와 키를 주고받아야 하는데,<br>
 					이 과정에서 대칭키가 노출될 수 있다는 단점이 있습니다.
@@ -362,7 +362,7 @@ Cookie : sessionid = ab32441213
 						 A키로 암호화를 하면 B키로 복호화 할 수 있고,<br>
 						 B키로 암호화하면 A키로 복호화 할 수 있는 방식입니다.
 					</p>
-					<img src="/images/test/3.png">
+					<img src="/images/2015-03-17/3.png">
 					<p class="fragment fade-in">
 						공개키가 유출되어도 비공개키가 없으면 복호화 불가능 <br>						
 					</p>
@@ -377,7 +377,7 @@ Cookie : sessionid = ab32441213
 						암호화된 실제 정보를 복호화할 때 사용할 대칭키는<br>
 						공개키로 암호화해서 클라이언트와 서버가 주고 받습니다.
 					</p>
-					<img src="/images/test/4.png">
+					<img src="/images/2015-03-17/4.png">
 				</section>
 
 				<section data-transition="fade">
@@ -417,7 +417,7 @@ Cookie : sessionid = ab32441213
 				</section>
 
 				<section data-transition="fade">
-					<img src="/images/test/5.png" style="width: 800px;">
+					<img src="/images/2015-03-17/5.png" style="width: 800px;">
 
 				</section>
 			</section>
@@ -480,7 +480,7 @@ Cookie : sessionid = ab32441213
 					<h2>Multiplexing</h2>
 					<p>적은수의 커넥션으로 다수의 요청 및 응답을 <br>
 						동시에 처리할 수 있습니다.</p>
-					<img src="/images/test/Multiplexing_image.png" style="width: 800px;">
+					<img src="/images/2015-03-17/Multiplexing_image.png" style="width: 800px;">
 				</section>
 		
 				<section data-transition="fade">

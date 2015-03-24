@@ -1,0 +1,251 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HTTP SPEC</title>
+  <link rel="stylesheet" href="/css/reveal.css">
+  <link rel="stylesheet" href="/css/theme/moon.css" id="theme">
+  <link rel="stylesheet" href="/css/custome/test.css">
+  <!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+			<section>
+				<h1>REST</h1>
+				<h5 style="text-transform: capitalize;">(Representational State Transfer)</h5>
+			</section>
+			<section id="Architectural_style">
+				<section>
+				<h2 style="text-transform: capitalize;">
+					REST <br>
+					 ∥ <br>
+					Architectural style
+				</h2>
+				</section>
+				<section>
+					<h2 style="text-transform: capitalize;">Architectural style?</h2>
+					<p>
+					아키텍처 스타일은 아키텍처를 설계할 때 반복되는 유사한 패턴으로써,<br>
+					과거부터 현재까지 많은 경험과 지식들의 결과물입니다.
+					</p>
+					<p>
+					적절한 아키텍처 스타일의 선택은 더욱 나은 아키텍처 설계를 할 수 있고, <br>
+					그에 따라 서비스를 효율적이고 효과적으로 만들 수 있습니다.
+					</p>
+					<p>
+					그러나 구현으로서 서비스의 요구사항을 충족시키지는 않으며, <br>
+					스타일이 주는 장점들을 잘 활용해 구체적인 시스템을 구현해야 합니다.
+					</p>
+					<h4>
+					REST는 웹서비스를 위한 가장 효율적인 아키텍처 스타일입니다.
+					</h4>
+				</section>
+			</section>
+			<section>
+				<section>
+				<h2 style="text-transform: capitalize;">
+					REST <br>
+					 ∥ <br>
+					자원(Resource)의 조작(Control)
+				</h2>
+				</section>
+				<section>
+					<h2 style="text-transform: capitalize;">Resource</h2>
+					<p>
+						리소스란 '웹 상에 존재하는 모든 정보'를 뜻합니다.
+					</p>
+					<p>
+						리소스의 이름 = URI(Uniform Resource Identifier)
+					</p>					
+				</section>
+				<section>
+					<h2 style="text-transform: capitalize;">Control</h2>
+					<p>
+						REST는 HTTP가 제공하는 메서드만으로 설계되었습니다.
+					</p>
+					<p>
+						<table style="color: #93a1a1;">
+							<thead>
+								<tr>
+									<th>Operation</th>
+									<th>HTTP/REST</th>
+									<th>SQL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Create</td>
+									<td>POST</td>
+									<td>INSERT</td>
+								</tr>
+								<tr>
+									<td>Read</td>
+									<td>GET</td>
+									<td>SELECT</td>
+								</tr>
+								<tr>
+									<td>Update</td>
+									<td>PUT</td>
+									<td>UPDATE</td>
+								</tr>
+								<tr>
+									<td>Delete</td>
+									<td>DELETE</td>
+									<td>DELETE</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+					<p>
+						인터페이스의 통일을 통해 아키텍쳐가 간결해 졌으며, <br>
+						서비스의 접근이 쉬워졌습니다. <br>
+						즉, 별도의 작업없이 자원을 그대로 활용할 수 있습니다.
+					</p>
+
+				</section>
+<!-- 				<section>
+					<h2>REST의 구성</h2>
+					<ul style="font-size:0.8em;">
+						<li>클라이언트/서버 : UI와 처리를 구분(클라이언트의 멀티플랫폼, 서버의 스토리지로서의 기능 지원)</li>
+						<li>스테이트리스 서버 : 서버측에서 클라이언트의 상태를 가지지 않음.</li>
+						<li>캐시 : 클라이언트와 서버의 통신횟수와 양을 감소 시킨다.</li>
+						<li>유니폼 인터페이스 : 인터페이스를 고정한다,</li>
+						<li>계층화 시스템 : 시스템을 계층별로 구분해 확장성을 향상시킨다.</li>
+						<li>코드 온 디맨드 : 서버가 클라이언트가 실행 시킬 수 있는 로직을 전송해 기능을 확장한다.</li>
+					</ul>
+				</section> -->
+			</section>
+
+			<section id="restful">
+				<section>
+				<h2 style="text-transform: capitalize;">
+					RESTful <br>
+					 ∥ <br>
+					<small>REST의 제약을 잘 따르고 있는 것</small>
+				</h2>
+				</section>
+				<section>
+					<h3>
+						URI의 올바른 설계												
+					</h3>
+					<p>
+						URI 설계시 명사형태의 단어를 지향하고, <br> 동사형태의 단어를 지양한다.
+					</p>
+					<br>
+					<h3>
+						하고자하는 작업에 맞는 메소드 사용
+					</h3>
+					<p>
+						모든작업에 POST를 이용하지 않는다<br>
+						Idempotence와 safe 성질을 고려한다
+					</p>
+				</section>
+				<section>
+					<table style="color: white;">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th>Properties</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>GET, HEAD</td>
+								<td>Idempotence, Safe</td>
+							</tr>
+							<tr>
+								<td>PUT, DELETE</td>
+								<td>Idempotence, not Safe</td>
+							</tr>
+							<tr>
+								<td>POST</td>
+								<td>not Idempotence, not Safe</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+{% highlight ruby %}
+router.route('/user')
+    .get(function(req, res){
+    	var results = [];
+        pg.connect(connectionString, function(err, client, done) {
+            var query = client.query("SELECT * FROM test ORDER BY user_id ASC");
+            query.on('row', function(row) { results.push(row); });
+            query.on('end', function() { client.end(); res.json(results);
+            });
+        });
+    })
+{% endhighlight %}
+{% highlight ruby %}
+router.route('/user')
+    .post(function(req, res) {
+        pg.connect(connectionString, function(err, client, done) {
+            client.query('INSERT INTO TEST(user_name) values($1)', [req.body.data]);
+        });
+    });
+{% endhighlight %}
+<div class="box red b1"></div>
+<div class="box red b2"></div>
+<div class="box green b3"></div>
+<div class="box green b4"></div>
+<div class="box blue b5"></div>
+<div class="box blue b6"></div>
+				</section>
+				<section>
+{% highlight ruby %}
+router.route('/user/:id')
+    .put(function(req, res) {
+        pg.connect(connectionString, function(err, client, done) {
+            client.query("UPDATE TEST SET user_name=($1) WHERE user_id=($2)",
+             [req.body.update_info, req.params.id]);
+            if (!err) res.json(
+            {"update_id" : req.params.id,
+             "update_name" : req.body.update_info});
+        });
+    });
+{% endhighlight %}
+{% highlight ruby %}
+router.route('/user/:id')
+    .delete(function(req, res) {
+        pg.connect(connectionString, function(err, client, done) {
+            client.query('DELETE FROM TEST WHERE user_id=($1)', [req.params.id]);
+            if (!err) res.json({"delete_id" : req.params.id});
+        });
+    });
+{% endhighlight %}
+<div class="box red b7"></div>
+<div class="box red b8"></div>
+<div class="box green b9"></div>
+<div class="box green b10"></div>
+<div class="box blue b11"></div>
+<div class="box blue b12"></div>
+				</section>
+
+			</section>
+
+			<section style="text-align: left;">
+        <h1>THE END</h1>
+      </section>
+    </div>
+  </div>
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/lib/js/head.min.js"></script>
+  <script src="/js/reveal.js"></script>
+  <script>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    slideNumber: true,
+    // width: 960,
+    // height: 700,
+    fragments: true,
+    top: 0
+  });
+  </script>
+</body>
+
+</html>

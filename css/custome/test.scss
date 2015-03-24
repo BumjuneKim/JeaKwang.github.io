@@ -1,98 +1,70 @@
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-@mixin clearImg {
-  border: none;
-  box-shadow: none;
-  background: rgba(255, 255, 255, 0);
+@mixin boxP($top, $left, $width) {
+    top: $top;
+    left: $left;
+    width: $width
 }
-@mixin setFont {
-  font-family: 'Jeju Gothic', serif !important;
+@mixin setBorder($size, $type, $color){
+		border: $size $type $color;
 }
-body {
-  section {
-    font-size: 14px;
-    @include setFont;
-    img {
-      @include clearImg;
-    }
-    .header_detail {
-      p {        
-        font-size: 0.7em;
-        margin-bottom: 10px;
-      }
-      ul{
 
-        text-align: left;
-        li{
-          text-align: left;
-          font-size: 0.8em;
+#Architectural_style {
+    section {
+        p {
+            font-size: 0.8em;
         }
-      }
-      h2{
-        text-transform: capitalize;
-      }
-      h3 {
-        text-transform: capitalize;
-        margin: 0;
-      }
     }
-  }
 }
-#http_struct {
-  img {
-    margin: 0px;
-    width: 700px;
-    @include clearImg;
-  }
-}
-#http{
-  section{
-    .box1{
-      position: absolute;
-      width: 600px;
-      height: 50px;
-      border: 5px solid red;
-      top: 190px;
-      left: 180px;
+
+#restful {
+    section {
+        .box {
+            position: absolute;
+            height: 30px;
+        }
+        .red {
+        	@include setBorder(3px, solid, red);
+        }
+        .green {
+        	@include setBorder(3px, solid, green);
+        }
+        .blue {            
+            @include setBorder(3px, solid, blue);
+        }
+        .b1 {
+            @include boxP(38, 166, 100);
+        }
+        .b2 {
+            @include boxP(303, 166, 100);
+        }
+        .b3 {
+            @include boxP(64, 86, 51);
+        }
+        .b4 {
+            @include boxP(328, 95, 50);
+        }
+        .b5 {
+            @include boxP(132, 423, 71);
+        }
+        .b6 {
+            @include boxP(373, 307, 67);
+        }
+        .b7 {
+            @include boxP(38, 175, 131);
+        }
+        .b8 {
+            @include boxP(306, 175, 127);
+        }
+        .b9 {
+            @include boxP(64, 86, 51);
+        }
+        .b10 {
+            @include boxP(333, 89, 83);
+        }
+        .b11 {
+            @include boxP(108, 291, 85);
+        }
+        .b12 {
+            @include boxP(375, 298, 72);
+        }
     }
-    .box2{
-      position: absolute;
-      width: 600px;
-      height: 50px;
-      border: 5px solid red;
-      top: 335px;
-      left: 180px;
-    }
-    .box3{
-      position: absolute;
-      width: 600px;
-      height: 50px;
-      border: 5px solid red;
-      top: 380px;
-      left: 180px;
-    }
-  }
-}
-#https {
-  section {
-      img {
-    @include clearImg;
-    width: 500px;
-    }
-    .box {
-      position: absolute;
-      width: 600px;
-      height: 50px;
-      border: 5px solid red;
-      top: 400px;
-      left: 180px;
-    }
-    .boxDesc{
-      position: absolute;
-      font-size:0.6em;      
-      top: 500px;
-      left: 147px;
-      color:black;
-      background: rgba(255, 255, 255, 0.5);
-    }
-  }
 }

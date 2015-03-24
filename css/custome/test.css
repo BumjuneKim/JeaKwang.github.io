@@ -1,72 +1,62 @@
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-body section {
-  font-size: 14px;
-  font-family: 'Jeju Gothic', serif !important; }
-  body section img {
-    border: none;
-    box-shadow: none;
-    background: rgba(255, 255, 255, 0); }
-  body section .header_detail p {
-    font-size: 0.7em;
-    margin-bottom: 10px; }
-  body section .header_detail ul {
-    text-align: left; }
-    body section .header_detail ul li {
-      text-align: left;
-      font-size: 0.8em; }
-  body section .header_detail h2 {
-    text-transform: capitalize; }
-  body section .header_detail h3 {
-    text-transform: capitalize;
-    margin: 0; }
+#Architectural_style section p {
+  font-size: 0.8em; }
 
-#http_struct img {
-  margin: 0px;
-  width: 700px;
-  border: none;
-  box-shadow: none;
-  background: rgba(255, 255, 255, 0); }
-
-#http section .box1 {
+#restful section .box {
   position: absolute;
-  width: 600px;
-  height: 50px;
-  border: 5px solid red;
-  top: 190px;
-  left: 180px; }
-#http section .box2 {
-  position: absolute;
-  width: 600px;
-  height: 50px;
-  border: 5px solid red;
-  top: 335px;
-  left: 180px; }
-#http section .box3 {
-  position: absolute;
-  width: 600px;
-  height: 50px;
-  border: 5px solid red;
-  top: 380px;
-  left: 180px; }
-
-#https section img {
-  border: none;
-  box-shadow: none;
-  background: rgba(255, 255, 255, 0);
-  width: 500px; }
-#https section .box {
-  position: absolute;
-  width: 600px;
-  height: 50px;
-  border: 5px solid red;
-  top: 400px;
-  left: 180px; }
-#https section .boxDesc {
-  position: absolute;
-  font-size: 0.6em;
-  top: 500px;
-  left: 147px;
-  color: black;
-  background: rgba(255, 255, 255, 0.5); }
+  height: 30px; }
+#restful section .red {
+  border: 3px solid red; }
+#restful section .green {
+  border: 3px solid green; }
+#restful section .blue {
+  border: 3px solid blue; }
+#restful section .b1 {
+  top: 38;
+  left: 166;
+  width: 100; }
+#restful section .b2 {
+  top: 303;
+  left: 166;
+  width: 100; }
+#restful section .b3 {
+  top: 64;
+  left: 86;
+  width: 51; }
+#restful section .b4 {
+  top: 328;
+  left: 95;
+  width: 50; }
+#restful section .b5 {
+  top: 132;
+  left: 423;
+  width: 71; }
+#restful section .b6 {
+  top: 373;
+  left: 307;
+  width: 67; }
+#restful section .b7 {
+  top: 38;
+  left: 175;
+  width: 131; }
+#restful section .b8 {
+  top: 306;
+  left: 175;
+  width: 127; }
+#restful section .b9 {
+  top: 64;
+  left: 86;
+  width: 51; }
+#restful section .b10 {
+  top: 333;
+  left: 89;
+  width: 83; }
+#restful section .b11 {
+  top: 108;
+  left: 291;
+  width: 85; }
+#restful section .b12 {
+  top: 375;
+  left: 298;
+  width: 72; }
 
 /*# sourceMappingURL=test.css.map */
