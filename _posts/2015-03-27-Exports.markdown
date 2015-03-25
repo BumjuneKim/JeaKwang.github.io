@@ -2,7 +2,7 @@
 layout: post
 title:  "module.exports vs exports"
 date:   2015-03-27 11:50:07
-categories: jekyll update nodejs exports
+categories: nodejs
 ---
 
 - `module`는 `exports`라는 프로퍼티를 지닌 단순한 자바스크립트 오브젝트입니다.

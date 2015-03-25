@@ -1,5 +1,6 @@
 # Site settings
 title: Fliito Dev Blog
+
 email: jeakwang@flitto.com
 description: > # this means to ignore newlines until "baseurl:"
   플리토 개발 블로그 입니다.
@@ -11,4 +12,3 @@ github_username:  jeakwang
 markdown: kramdown
 highlighter: pygments
 encoding: utf-8
-paginate: 10
