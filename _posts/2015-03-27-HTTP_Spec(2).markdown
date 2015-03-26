@@ -54,7 +54,7 @@ openssl genrsa -des3 -out server.key 1024
           <h5>CSR(Certificate Signing Request)</h5>
 {% highlight ruby %}
 // CA CSR 생성
-openssl req -new -key ca.key -out ca.csr4
+openssl req -new -key ca.key -out ca.csr
 
 // Site CSR 생성
 openssl req -new -key server.key -out server.csr
