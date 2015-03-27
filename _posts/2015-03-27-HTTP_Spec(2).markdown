@@ -25,14 +25,12 @@
 					<img src="/images/2015-03-17/5.png" style="width: 800px; background: none; border: none;">
 			</section>
 			<section>
-
         <section>
 				<h3>인증서의 공개키를 가지지 않았다면 HTTPS를 사용할 수 없다?</h3>
 				<p>사용할 수 없다. 그러나</p>
 				<h4>테스트용으로 사용할 때</h4>
-				<p>OpenSSL로 ROOT CA라는 가상의 인증기관을를 만들어<br>브라우저에 인증서를 추가할 수 있다.</p>
+				<p>OpenSSL로 ROOT CA라는 가상의 인증기관을 만들어<br>브라우저에 인증서를 추가할 수 있다.</p>
         </section>
-
         <section>
           <h3>개인키 생성</h3>
 {% highlight ruby %}
