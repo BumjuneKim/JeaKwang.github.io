@@ -8,7 +8,7 @@ categories: seminar
   <title>HTTP SPEC</title>
   <link rel="stylesheet" href="/css/reveal.css">
   <link rel="stylesheet" href="/css/theme/moon.css" id="theme">
-  <link rel="stylesheet" href="/css/custome/test.css">
+  <link rel="stylesheet" href="/css/custome/2015-03-27.css">
   <!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
