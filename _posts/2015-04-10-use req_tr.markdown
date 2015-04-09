@@ -1,0 +1,112 @@
+---
+title:  "Use 'req_tr'"
+categories: seminar
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HTTP SPEC</title>
+  <link rel="stylesheet" href="/css/reveal.css">
+  <link rel="stylesheet" href="/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="/css/custome/2015-04-10.css">
+  <!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+			<section>
+				<h1>Use 'req_tr'</h1>
+			</section>
+			<section>
+				<img src="/images/2015-04-10/1.png">
+				<div class="fragment fade-in">
+					<div class="box0"></div>
+				</div>
+				<div class="fragment fade-in">
+					<div class="box1"></div>
+				</div>
+			</section>
+			<section>
+				<h1>req_tr PUSH</h1>
+			</section>
+			<section>
+				<section data-transition="fade">
+					<img src="/images/2015-04-10/1-1.png">
+					<div class="fragment fade-in">
+						<div class="box2"></div>
+					</div>
+				</section>
+				<section data-transition="fade">
+{% highlight ruby %}
+// task_manger의 req_tr
+io.sockets.emit('req_tr', { cnt: 1 });
+
+// My Flitto의 req_tr에 대한 응답
+socket.on('req_tr', function(data) {
+  // 요청받은 사용자의 정보 얻어오기
+  socket.emit('getUserContent', data.user_id);
+});
+{% endhighlight %}
+
+				</section>
+				
+				<section data-transition="fade">
+{% highlight ruby %}
+SELECT username, req_tr.user_id, photo_url, count(DISTINCT create_date) req, count(DISTINCT long_req_id) longReq
+ , count(substring(content_url from 'jpg')) + count(substring(content_url from 'png')) image
+ , count(substring(content_url from 'mp4')) + count(substring(content_url from 'aac'))
+ + count(substring(content_url from 'm4a')) + count(substring(content_url from 'mp3')) sound
+ FROM req_tr
+ JOIN users
+ ON req_tr.user_id = users.user_id
+ WHERE req_tr.user_id = 'data'
+ GROUP BY username, photo_url, req_tr.user_id";
+{% endhighlight %}
+				</section>
+
+				<section data-transition="fade">
+					<img src="/images/2015-04-10/2.png">
+					<div class="fragment fade-in">
+						<div class="box3"></div>
+					</div>
+				</section>
+
+				<section data-transition="fade">
+					<img src="/images/2015-04-10/3.png">
+					<div class="fragment fade-in">
+						<div class="box4"></div>
+					</div>					
+				</section>
+
+				<section data-transition="fade">
+					<img src="/images/2015-04-10/4.png">
+				</section>
+			</section>
+			<section>
+				<h1>req_tr Table</h1>
+			</section>
+			<section>
+				<img src="/images/2015-04-10/5.png">
+			</section>
+			<section style="text-align: left;">
+        <h1>THE END</h1>
+      </section>
+    </div>
+  </div>
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/lib/js/head.min.js"></script>
+  <script src="/js/reveal.js"></script>
+  <script>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    slideNumber: true,
+    fragments: true,
+    top: 0
+  });
+  </script>
+</body>
+
+</html>
