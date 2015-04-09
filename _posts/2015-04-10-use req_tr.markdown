@@ -20,7 +20,7 @@ categories: seminar
 				<h1>Use 'req_tr'</h1>
 			</section>
 			<section>
-				<img src="/images/2015-04-10/1.png">
+				<img src="/images/2015-04-10/1.PNG">
 				<div class="fragment fade-in">
 					<div class="box0"></div>
 				</div>
@@ -33,7 +33,7 @@ categories: seminar
 			</section>
 			<section>
 				<section data-transition="fade">
-					<img src="/images/2015-04-10/1-1.png">
+					<img src="/images/2015-04-10/1-1.PNG">
 					<div class="fragment fade-in">
 						<div class="box2"></div>
 					</div>
@@ -51,7 +51,7 @@ socket.on('req_tr', function(data) {
 {% endhighlight %}
 
 				</section>
-				
+
 				<section data-transition="fade">
 {% highlight ruby %}
 SELECT username, req_tr.user_id, photo_url, count(DISTINCT create_date) req, count(DISTINCT long_req_id) longReq
@@ -67,28 +67,28 @@ SELECT username, req_tr.user_id, photo_url, count(DISTINCT create_date) req, cou
 				</section>
 
 				<section data-transition="fade">
-					<img src="/images/2015-04-10/2.png">
+					<img src="/images/2015-04-10/2.PNG">
 					<div class="fragment fade-in">
 						<div class="box3"></div>
 					</div>
 				</section>
 
 				<section data-transition="fade">
-					<img src="/images/2015-04-10/3.png">
+					<img src="/images/2015-04-10/3.PNG">
 					<div class="fragment fade-in">
 						<div class="box4"></div>
 					</div>					
 				</section>
 
 				<section data-transition="fade">
-					<img src="/images/2015-04-10/4.png">
+					<img src="/images/2015-04-10/4.PNG">
 				</section>
 			</section>
 			<section>
 				<h1>req_tr Table</h1>
 			</section>
 			<section>
-				<img src="/images/2015-04-10/5.png">
+				<img src="/images/2015-04-10/5.PNG">
 			</section>
 			<section style="text-align: left;">
         <h1>THE END</h1>
