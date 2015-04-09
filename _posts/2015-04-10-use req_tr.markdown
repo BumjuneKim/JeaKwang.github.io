@@ -51,21 +51,6 @@ socket.on('req_tr', function(data) {
 {% endhighlight %}
 
 				</section>
-
-				<section data-transition="fade">
-{% highlight ruby %}
-SELECT username, req_tr.user_id, photo_url, count(DISTINCT create_date) req, count(DISTINCT long_req_id) longReq
- , count(substring(content_url from 'jpg')) + count(substring(content_url from 'png')) image
- , count(substring(content_url from 'mp4')) + count(substring(content_url from 'aac'))
- + count(substring(content_url from 'm4a')) + count(substring(content_url from 'mp3')) sound
- FROM req_tr
- JOIN users
- ON req_tr.user_id = users.user_id
- WHERE req_tr.user_id = 'data'
- GROUP BY username, photo_url, req_tr.user_id";
-{% endhighlight %}
-				</section>
-
 				<section data-transition="fade">
 					<img src="/images/2015-04-10/2.PNG">
 					<div class="fragment fade-in">
