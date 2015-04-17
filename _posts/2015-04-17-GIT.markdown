@@ -74,6 +74,8 @@ categories: seminar
           <li><strong>git grep -l (검색어)</strong>: 매치된 파일 목록으로 조회</li>
           <br/>
           <li><strong>git log --grep (검색어)</strong>: 로그에서 검색어가 있는 커밋 찾기</li>
+          <br/>
+          <li><strong>git log -G[검색어]</strong> : 파일내의 검색어 커밋 로그로 조회하기</li>
         </ul>
       </section>
     </section>
