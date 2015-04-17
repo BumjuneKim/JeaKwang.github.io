@@ -35,7 +35,7 @@ categories: seminar
             <br/>
             <li style="list-style-type: none;">2. 탐색 범위 지정하기</li>
             <li><strong>git bisect good [커밋]</strong> : 문제가 발생하지 않은 커밋 지정</li>
-            <li><strong>git bisect bod [커밋]</strong> : 문제가 발생하는 커밋 지정</li>
+            <li><strong>git bisect bad [커밋]</strong> : 문제가 발생하는 커밋 지정</li>
             <li style="list-style-type: none; color: gray;"> <small>-> git이 의심되는 커밋을 한개씩 Checkout해서 보여준다</small></li>
             <br/>
             <li style="list-style-type: none;">2. 탐색 검증하기</li>
