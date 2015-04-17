@@ -26,17 +26,22 @@ categories: seminar
         <h1>bisect</h1>
       </section>
       <section>
-        <h4><strong>커밋 히스토리를 이진 탐색으로 빠르게 찾아낸다.</strong></h4>
+        <h3>커밋 히스토리를 이진 탐색으로 탐색</h3>
 
         <div style="text-align: left;">
           <ul>
-            <li>git bisect start : 탐색 시작</li>
-            <li>git bisect good [커밋] : 문제가 발생하지 않은 커밋 지정</li>
-            <li>git bisect bod [커밋] : 문제가 발생하는 커밋 지정</li>
-            <li style="list-style-type: none;"> -> 위와같이 범위를 지정하면 git이 의심되는 커밋을 한개씩 Checkout해서 보여준다</li>
-            <li>git이 가리키는 커밋이 정상이라면 git bisect good을</li>
-            <li>git이 가리키는 커밋이 오류라면 git biesect bad를 입력한다.</li>
-            <li>git bisect reset 실행시켜서 이진 탐색을 시작하기 전으로 HEAD를 돌려놓는다.</li>
+            <li style="list-style-type: none;">1. 탐색 시작하기</li>
+            <li><strong>git bisect start</strong> : 탐색 시작</li>
+            <br/>
+            <li style="list-style-type: none;">2. 탐색 범위 지정하기</li>
+            <li><strong>git bisect good [커밋]</strong> : 문제가 발생하지 않은 커밋 지정</li>
+            <li><strong>git bisect bod [커밋]</strong> : 문제가 발생하는 커밋 지정</li>
+            <li style="list-style-type: none; color: gray;"> <small>-> git이 의심되는 커밋을 한개씩 Checkout해서 보여준다</small></li>
+            <br/>
+            <li style="list-style-type: none;">2. 탐색 검증하기</li>
+            <li><strong>git bisect good</strong> : 현재 git이 가리키는 커밋이 정상</li>
+            <li><strong>git bisect bad</strong> : 현재 git이 가리키는 커밋이 오류</li>
+            <li><strong>git bisect reset</strong> : 탐색을 시작하기 전으로 HEAD를 돌려놓기</li>
           </ul>
         </div>
 
@@ -50,23 +55,9 @@ categories: seminar
       <section>
         <h3>파일의 변동사항 확인</h3>
         <ul>
-          <li>git diff : Working directory vs Staging Area</li>
+          <li><strong>git diff</strong> : Working directory vs Staging Area</li>
           <br/>
-          <li>git diff --staged : Staging Area vs Repository</li>
-        </ul>
-      </section>
-    </section>
-
-    <section>
-      <section>
-        <h1>fetch</h1>
-      </section>
-      <section>
-        <h3>원격저장소에서 변경사항을 가져옴.</h3>
-        <ul>
-          <li>git fetch [저장소이름]</li>
-          <li style="list-style-type: none;"> --> fetch는 로컬 저장소에 미반영</li>
-          <li>pull : fetch + merge</li>
+          <li><strong>git diff --staged</strong>   : Staging Area vs Repository</li>
         </ul>
       </section>
     </section>
@@ -78,9 +69,11 @@ categories: seminar
       <section>
         <h4>검색어로 파일을 검색합니다.</h4>
         <ul>
-          <li>git grep [옵션](검색어|정규식)[브렌치명]</li>
-          <li>git grep -i (검색어): 매치된 파일 목록으로 조회</li>
-          <li>git log --grep (검색어): 커밋로그에서 검색어가 있는 커밋을 찾는다</li>
+          <li><strong>git grep [옵션](검색어|정규식)[브렌치명]</strong></li>
+          <br/>
+          <li><strong>git grep -l (검색어)</strong>: 매치된 파일 목록으로 조회</li>
+          <br/>
+          <li><strong>git log --grep (검색어)</strong>: 로그에서 검색어가 있는 커밋 찾기</li>
         </ul>
       </section>
     </section>
@@ -91,7 +84,15 @@ categories: seminar
       </section>
       <section>
         <h4>커밋 로그를 재구성해 간결하게 바꿔줌.</h4>
-        <img src="/images/2015-04-17/merge-rebase.png" style="border: none;">
+        <img src="/images/2015-04-17/rebase-step-1.gif" style="border: none;">
+      </section>
+      <section data-transition="fade">
+        <h4>커밋 로그를 재구성해 간결하게 바꿔줌.</h4>
+        <img src="/images/2015-04-17/rebase-step-2.gif" style="border: none;">
+      </section>
+      <section data-transition="fade">
+        <h4>커밋 로그를 재구성해 간결하게 바꿔줌.</h4>
+        <img src="/images/2015-04-17/rebase-step-3.gif" style="border: none;">
       </section>
       <section>
         <ol>
@@ -141,12 +142,14 @@ categories: seminar
       <section>
         <p>수정하기 이전을 되돌림</p>
         <ul>
+          <li style="list-style-type: none;">1. index 취소</li>
           <li>git reset -- [파일명] : 해당 파일을 unstaged</li>
           <li>git reset HEAD [파일명] : 위와 동일</li>
-          <li>git reset HEAD^ : 최종 커밋을 취소. 워킹트리는 보존됨. <br/>
-            (커밋은 했으나 push하지 않은 경우 유용)
-          </li>
-          <li>git reset HEAD~2 : 마지막 2개의 커밋을 취소. 워킹트리는 보존됨.</li>
+          <br/>
+          <li style="list-style-type: none;">2. commit 취소</li>
+          <li>git reset HEAD^ : 최종 커밋 취소</li>
+          <li>git reset HEAD~2 : 마지막 2개의 커밋 취소</li>
+          <li>git reset --hard ORIG_HEAD : 머지 커밋 취소</li>
         </ul>
       </section>
     </section>
@@ -173,6 +176,21 @@ categories: seminar
         </ul>
       </section>
 
+    </section>
+
+    <section>
+      <section>
+        <h1>fetch</h1>
+      </section>
+      <section>
+        <h3>원격저장소에서 변경사항을 가져옴.</h3>
+        <ul>
+          <li>git fetch [저장소이름]</li>
+          <li style="list-style-type: none; color:gray"><small>--> fetch는 로컬 저장소에 미반영</small></li>
+          <br/>
+          <li>pull : fetch + merge</li>
+        </ul>
+      </section>
     </section>
 
     <section>
