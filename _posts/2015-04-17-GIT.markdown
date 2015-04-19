@@ -71,18 +71,20 @@ categories: seminar
             <section>
                 <h3><strong>git grep [검색어]</strong></h3>
                 <br/>
+
                 <p> 내용에 [검색어]가 있는 파일을 찾아 보여줍니다. </p>
             </section>
             <section>
                 <h3><strong>git grep [옵션][검색어][브렌치명]</strong></h3>
                 <br/>
-             <p>
+
+                <p>
                 <ul>
                     <li> 옵션
                         <ul>
-                            <li> -l : list 형태로 출력(이름만) </li>
-                            <li> -c : 해당 문서에서 검색어가 사용된 횟수 출력 </li>
-                            <li> -n : 해당 문서에서 검색어가 위치한 라인 넘버를 출력 </li>
+                            <li> -l : list 형태로 출력(이름만)</li>
+                            <li> -c : 해당 문서에서 검색어가 사용된 횟수 출력</li>
+                            <li> -n : 해당 문서에서 검색어가 위치한 라인 넘버를 출력</li>
                         </ul>
                     </li>
                     <br/>
@@ -93,9 +95,12 @@ categories: seminar
             </section>
             <section>
                 <h3><strong>git log --grep [검색어]</strong></h3>
+
                 <p>로그에서 [검색어]가 있는 커밋 조회</p>
                 <br/>
+
                 <h3><strong>git log -G[검색어]</strong></h3>
+
                 <p>파일내의 [검색어]가 있는 커밋 조회</p>
             </section>
         </section>
@@ -108,13 +113,6 @@ categories: seminar
                 <h4>커밋 로그를 재구성해 간결하게 바꿔줌.</h4>
                 <img src="/images/2015-04-17/rebase-step-1.gif" style="border: none;">
             </section>
-            <section>
-                실제로 일어나는 일은 일단 두브렌치가 나뉘기 전인 공통 커밋으로 이동하고 나서 그 커밋으로 부터 지금 checkout한 브렌치가 가리키는 커밋까지 diff를 차례로 만들어 어딘가에 임시로 저장해 놓는다.
-                rebase할 브렌치가 합칠 브렌치가 가리키는 커밋을 가리키고 하고 아가 저장해 놓았던 변경사항을 차례대로 적용한다.
-
-                rebase의 경우는 브렌치의 변경사항을 순서대로 다른 브랜치에 적용하면서 합치고,
-                merge의 경우는 두 브랜치의 최종결과만을 가지고 합친다.
-            </section>
             <section data-transition="fade">
                 <h4>커밋 로그를 재구성해 간결하게 바꿔줌.</h4>
                 <img src="/images/2015-04-17/rebase-step-2.gif" style="border: none;">
@@ -122,6 +120,21 @@ categories: seminar
             <section data-transition="fade">
                 <h4>커밋 로그를 재구성해 간결하게 바꿔줌.</h4>
                 <img src="/images/2015-04-17/rebase-step-3.gif" style="border: none;">
+            </section>
+            <section>
+                <ol>
+                    <li>두 브렌치가 나뉘기 전의 공통 커밋으로 이동</li>
+                    <li>그 커밋으로부터 현재 checkout한 커밋까지 따로 저장</li>
+                    <li>rebase할 브렌치(현재 checkout한)가 기준 브렌치가 가리키는 커밋을 가리킴</li>
+                    <li>이전에 임시로 저장해 놓았던 변경사항을 차례로 적용</li>
+                </ol>
+            </section>
+            <section>
+                <h3>merge와의 차이점</h3>
+                <ul>
+                   <li>rebase : 브렌치의 변경사항을 순서대로 다른 브랜치에 적용하면서 합침</li>
+                   <li>merge : 두 브랜치의 최종결과만을 가지고 합침</li>
+                </ul>
             </section>
             <section>
                 <ol>
