@@ -108,6 +108,13 @@ categories: seminar
                 <h4>커밋 로그를 재구성해 간결하게 바꿔줌.</h4>
                 <img src="/images/2015-04-17/rebase-step-1.gif" style="border: none;">
             </section>
+            <section>
+                실제로 일어나는 일은 일단 두브렌치가 나뉘기 전인 공통 커밋으로 이동하고 나서 그 커밋으로 부터 지금 checkout한 브렌치가 가리키는 커밋까지 diff를 차례로 만들어 어딘가에 임시로 저장해 놓는다.
+                rebase할 브렌치가 합칠 브렌치가 가리키는 커밋을 가리키고 하고 아가 저장해 놓았던 변경사항을 차례대로 적용한다.
+
+                rebase의 경우는 브렌치의 변경사항을 순서대로 다른 브랜치에 적용하면서 합치고,
+                merge의 경우는 두 브랜치의 최종결과만을 가지고 합친다.
+            </section>
             <section data-transition="fade">
                 <h4>커밋 로그를 재구성해 간결하게 바꿔줌.</h4>
                 <img src="/images/2015-04-17/rebase-step-2.gif" style="border: none;">
