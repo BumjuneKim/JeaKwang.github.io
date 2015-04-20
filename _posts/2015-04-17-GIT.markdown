@@ -182,6 +182,10 @@ categories: seminar
                     <li>push를 한 경우라면 rebase는 피하자!</li>
                 </ol>
             </section>
+            <section>
+                <h4>같은 브렌치의 커밋 간결화</h4>
+                <p>git reabse -i HEAD~n</p>
+            </section>
         </section>
 
         <section>
