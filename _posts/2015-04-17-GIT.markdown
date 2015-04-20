@@ -20,7 +20,7 @@ categories: seminar
             <h1>GIT 명령어</h1>
         </section>
         <section>
-            <h1>KBJ GIT 기초↓</h1>
+            <h1>KBJ GIT 기초↓ </h1>
             <h3><a href="https://docs.google.com/presentation/d/1EGRKXnbJEiWz-1-xFPGN6kV-OYP8QVSW5gYwFRCRaTQ/edit?usp=sharing" target="_blank">link</a></h3>
         </section>
         <section>
