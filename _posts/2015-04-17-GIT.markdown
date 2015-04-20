@@ -20,7 +20,17 @@ categories: seminar
         <section>
             <h1>GIT 명령어</h1>
         </section>
-
+        <section>
+            <ol>
+                <li>bisect</li>
+                <li>diff</li>
+                <li>grep</li>
+                <li>rebase</li>
+                <li>stash</li>
+                <li>fetch</li>
+                <li>tag</li>
+            </ol>
+        </section>
         <section>
             <section>
                 <h1>bisect</h1>
